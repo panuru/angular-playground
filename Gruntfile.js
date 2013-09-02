@@ -318,12 +318,12 @@ module.exports = function (grunt) {
     ]);
   });
 
-  // grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test',
-  //   'karma'
-  // ]);
+  grunt.registerTask('test', [
+    'clean:server',
+    'concurrent:test',
+    'connect:test',
+    'karma'
+  ]);
 
   grunt.registerTask('build', [
     'clean:dist',
@@ -339,6 +339,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    'build'
+    'build',
+    'test'
   ]);
 };
